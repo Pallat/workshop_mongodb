@@ -1,0 +1,43 @@
+### start mongodb ###
+mongod --dbpath ~/data/db
+
+- start mongo console
+mongo
+
+- show all db
+show dbs
+
+### One to Many ###
+One-to-few
+  embedded recommended
+One-to-many
+  child reference recommended
+  post = {
+    _id:1,
+    comments:[1,2]
+  }
+  
+  comments = {
+    _id:1
+  }
+  {
+    _id:2
+  }
+  
+One-to-large
+  parent reference recommended
+post = {
+    _id:1,
+  }
+  comments = {
+    _id:1
+    post_id:1
+  }
+  {
+    _id:2
+    post_id:1
+  }
+
+
+
+
